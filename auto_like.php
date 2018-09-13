@@ -2,8 +2,8 @@
 set_time_limit(0);
 error_reporting(0);
 $token = 'EAAAAUaZA8jlABAIKHq5Uw987zCnl5nzeA0hIMVaU8tjpukFIDbNGRNqSgdFTCZARkf4CGU36Tp9LX1LGUD5zH1qC00cfJdQAtHpcwK9PYFieJ8YmFPrbz6IA80qvV6nZBDUdC20LcbS6eQB5lJhKRSDqCaTMlM1WZC3VfBDZCM1g5oGZBMsv1o'; /*̉Bỏ Token Full Quyền Vào*/
-$camsuc = 'LOVE', 'LIKE';  /* icon cần thả nếu bạn muốn cảm súc là haha thì sửa lại lại : vd> $camsuc = 'LIKE'; thành $camsuc = 'HAHA' ( các cảm xúc cần chọn 'LIKE','WOW','LOVE','ANGRY','HAHA','SAD','PRIDE'*/
-$limit = '100';  /* sô bài cần like & CMT*/
+$camsuc = 'LIKE';  /* icon cần thả nếu bạn muốn cảm súc là haha thì sửa lại lại : vd> $camsuc = 'LIKE'; thành $camsuc = 'HAHA' ( các cảm xúc cần chọn 'LIKE','WOW','LOVE','ANGRY','HAHA','SAD','PRIDE'*/
+$limit = '500';  /* sô bài cần like & CMT*/
 $post = json_decode(request('https://graph.facebook.com/me/home?fields=id,message,created_time,from&limit=' . $limit . '&access_token=' . $token), true); /* Get Data Post*/
 $timelocpost = date('Y-m-d');
 $logpost     = file_get_contents("log.txt");
