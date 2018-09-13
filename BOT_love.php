@@ -3,13 +3,13 @@ $like = "on"; //on hoặc off
 $comments = "off";//on hoặc off
 $log_post = @file_get_contents('log_id.txt');
 $token= @file_get_contents('token.txt');
-$limit = '100'; // số bài cần lái
+$limit = '500'; // số bài cần lái
 get_UID($token);
 $list_friend = @file_get_contents('friend.txt');
-$all_type    = ["LOVE", "LIKE"];//có 5 trạng thái
+$all_type    = ["LOVE"];//có 5 trạng thái
 $stickerid =  ["1747089445602307","1747085962269322","1747082948936290","1747087128935872", "1747081105603141","416664085413098","1659201710991729","184002922217363","1601168630115055","792363667547441","131715684089706","193082804543990","364384103724895","416956522050521","387545828037968","488541347925977","178518209293200","178519069293114","178520939292927","1601168506781734","789355131153401","830546363633252","193082861210651","193083001210637","100004263211862","100001518861027","100014908207774","1302632663199038"]; // id của sticker
 $array_comment = ["<3"];
-$type  = $all_type[rand(0,1)]; //bạn có thể để random từ 0 -> 4 hoặc để số thay rand()
+$type  = $all_type[rand(0)]; //bạn có thể để random từ 0 -> 4 hoặc để số thay rand()
 $idsticker = $stickerid[rand(0,count($stickerid)-1)];
 $comment = $array_comment[rand(0,count($array_comment)-1)];
 $id_nhom = ["123","456","789"]; //id nhóm không muốn bot
