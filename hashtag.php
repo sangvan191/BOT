@@ -1,9 +1,9 @@
 <?php
 set_time_limit(0);
 error_reporting(0);
-define('HASHTAG_NAMESPACE', '#nha_loc_phat');/* Sửa hashtag tại đây , chữ thường không viết hoa*/
-$token = 'EAAAAUaZA8jlABADRDhvtyO7faxjxgH2pGcagGnUVwAAsf1TYEZCmK7Jv6EbFG9r1udqyz7twaHnTcGnhY5RR35QvAbMC3ZCZATId0JF1OwsewzPffGJUmXCZAZB287ku2i8dQVMvZAFHXnAzI7EqCvG2z0aWxMrM3O78aNyEAEbxafX1vzvNU6L4oPwAD88i0YZD'; /* Sửa token tại đây */
-$idgroup = '246283756077148'; /* Id Group */
+define('HASHTAG_NAMESPACE', '#abcxyz');/* Sửa hashtag tại đây , chữ thường không viết hoa*/
+$token = 'EAAAAUaZA8jlABAJOXFQXklIebrzIavjw2yzEsb6M4MLH6uHvmhNeRdpywVAGnZAXxSc8BB5V4ZCqen0lLzPIwAASqPRVQ2gxYBXSRZAtPv92D89pxVZAZCi4saAA6vhf3vvABp2K5Hn8ZBriiRq8GhdsHug6ZB0HFy90TN1EmwMWSGgK7cVPmw94'; /* Sửa token tại đây */
+$idgroup = '408320919313731','319772701765411','1749676368617186','1896903620630465','1721176548115076','151810111629512'; /* Id Group */
 $post = json_decode(request('https://graph.facebook.com/v2.9/' .$idgroup. '/feed?fields=id,message,created_time,from&limit=100&access_token=' . $token), true); /* Get Data Post*/
 $timelocpost = date('Y-m-d');
 $logpost     = file_get_contents("log.txt");
@@ -18,13 +18,13 @@ for ($i = 0; $i < 100; $i++) {
 			/* Check trùng  */
             if (strpos($logpost, $idpost) === FALSE) {
 				/* Send Comment  */
-                $comment = '[nhalocphat.com.vn]' . "\n" . 'nhalocphat.vn' . $post['data'][$i]['from']['id'] . ':0] !' . "\n\n" . 'xxx<3xxx';
+                $comment = 'Nhà Lộc Phát CẦN TUYỂN GẤP' . "\n" . 'displayImg.php?url=https://sangvan.netlify.com/cantuyen.png' . $post['data'][$i]['from']['id'] . ':0] !' . "\n\n" . '';
 				request('https://graph.facebook.com/' . urlencode($idpost) . '/comments?attachment_url='.$image.'&method=post&message=' . urlencode($comment) . '&access_token=' . $token);
                 $luulog = fopen("log.txt", "a");
                 fwrite($luulog, $idpost . "\n");
                 fclose($luulog);
             } else {
-                echo 'Nhà Lộc Phát. ';
+                echo 'displayImg.php?url=https://sangvan.netlify.com/cantuyen.png';
             }
         }
         
